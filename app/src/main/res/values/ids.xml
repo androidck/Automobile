@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="mian_activity_id" type="id"></item>
+    <item name="login_activity_id" type="id"></item>
+    <item name="register_activity_id" type="id"></item>
+    <item name="fanhui" type="id"></item>
+</resources>
