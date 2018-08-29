@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:background="#f6f6f6"
     >
-    <TextView
+    <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="1"
-        android:textSize="20dp"
-        android:gravity="center"
-        />
+        android:layout_height="175px"
+        android:background="@color/colorBgColor"
+        ></com.zhy.autolayout.AutoLinearLayout>
 </FrameLayout>
