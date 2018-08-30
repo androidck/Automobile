@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#f6f6f6">
+    <com.qmuiteam.qmui.widget.QMUITopBar
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        app:qmui_topbar_bg_color="#f6f6f6"
+        app:qmui_topbar_title_color="#161616"
+        />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</FrameLayout>
