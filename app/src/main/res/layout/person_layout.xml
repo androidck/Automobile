@@ -6,9 +6,14 @@
     android:fitsSystemWindows="true"
     android:background="#f6f6f6"
     >
+
+    <!--头部背景 -->
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="175px"
-        android:background="@color/colorBgColor"
-        ></com.zhy.autolayout.AutoLinearLayout>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
 </FrameLayout>
