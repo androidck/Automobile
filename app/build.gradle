@@ -69,4 +69,6 @@ dependencies {
 
     implementation 'com.yanzhenjie:permission:2.0.0-rc4'
     implementation 'com.yanzhenjie.alertdialog:alertdialog:1.0.1'
+    //万能item
+    implementation 'com.github.codbking:AllItemView:v1.0.0'
 }

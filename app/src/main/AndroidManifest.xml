@@ -58,7 +58,7 @@
         <service android:name="com.amap.api.location.APSService">
         </service>
 
-        <activity android:name=".TextActivity">
+        <activity android:name=".moudle.system.SettingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
