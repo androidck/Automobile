@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.auto.mobile.R;
 import com.auto.mobile.common.base.BaseFragment;
 import com.auto.mobile.moudle.system.ReleaseActivity;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import butterknife.BindView;
@@ -27,12 +29,20 @@ public class TrendsFragment extends BaseFragment {
     Unbinder unbinder;
     @BindView(R.id.btn_commit)
     AutoRelativeLayout btnCommit;
+    @BindView(R.id.refreshLayout)
+    SmartRefreshLayout refreshLayout;
 
     @Override
     protected View onCreateView() {
         FrameLayout layout = (FrameLayout) LayoutInflater.from(getActivity()).inflate(R.layout.trends_layout, null);
         unbinder = ButterKnife.bind(this, layout);
+        initView();
         return layout;
+    }
+    private void initView(){
+        //第一次自动刷新
+        refreshLayout.setRefreshHeader(new ClassicsHeader(getActivity()));
+        refreshLayout.autoRefresh();
     }
 
     //单利模式
@@ -52,7 +62,7 @@ public class TrendsFragment extends BaseFragment {
 
     @OnClick(R.id.btn_commit)
     public void onViewClicked() {
-        Intent intent=new Intent(getActivity(), ReleaseActivity.class);
+        Intent intent = new Intent(getActivity(), ReleaseActivity.class);
         startActivity(intent);
     }
 }

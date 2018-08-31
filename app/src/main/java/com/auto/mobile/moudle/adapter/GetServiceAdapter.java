@@ -11,11 +11,10 @@ import android.widget.TextView;
 
 import com.auto.mobile.R;
 import com.auto.mobile.moudle.model.GetService;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * 获得的服务 adapter
@@ -26,6 +25,7 @@ public class GetServiceAdapter extends RecyclerView.Adapter<GetServiceViewHolder
     private Context mContext;
     private LayoutInflater inflater;
     private List<GetService> mDatas;
+
 
     public GetServiceAdapter(Context context, List<GetService> mDatas) {
         this.mContext = context;
@@ -62,7 +62,6 @@ class GetServiceViewHolder extends RecyclerView.ViewHolder {
 
     public GetServiceViewHolder(View itemView) {
         super(itemView);
-        ButterKnife.bind(this,itemView);
         item_img=itemView.findViewById(R.id.item_img);
         item_name=itemView.findViewById(R.id.item_name);
         item_date=itemView.findViewById(R.id.item_date);

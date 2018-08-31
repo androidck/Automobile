@@ -10,6 +10,8 @@ import com.auto.mobile.common.base.BaseActivity;
 import com.auto.mobile.moudle.adapter.GetServiceAdapter;
 import com.auto.mobile.moudle.model.GetService;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -31,11 +33,15 @@ public class GetServiceActivity extends BaseActivity {
 
     List<GetService> list;
     GetServiceAdapter adapter;
+    @BindView(R.id.refreshLayout)
+    SmartRefreshLayout refreshLayout;
+
 
     @Override
     protected int getContextViewId() {
         return 0;
     }
+
 
 
     @Override
@@ -49,9 +55,9 @@ public class GetServiceActivity extends BaseActivity {
         initView();
     }
 
-    private void initTopBar(){
+    private void initTopBar() {
         topBar.setTitle("获得的服务");
-        topBar.addLeftImageButton(R.mipmap.fanhui,R.id.fanhui).setOnClickListener(new View.OnClickListener() {
+        topBar.addLeftImageButton(R.mipmap.fanhui, R.id.fanhui).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -60,12 +66,11 @@ public class GetServiceActivity extends BaseActivity {
     }
 
     //初始化数据
-    private void initData(){
-        list=new ArrayList<>();
-
-        for (int i=0;i<10;i++){
-            GetService getService=new GetService();
-            getService.setServiceName("服务"+i);
+    private void initData() {
+        list = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            GetService getService = new GetService();
+            getService.setServiceName("服务" + i);
             getService.setServiceDate(new SimpleDateFormat("yyyy.MM.dd").format(new Date()));
             getService.setServiceDetails("服务：更换机油");
             list.add(getService);
@@ -73,10 +78,17 @@ public class GetServiceActivity extends BaseActivity {
 
     }
 
-    private void initView(){
-        adapter=new GetServiceAdapter(GetServiceActivity.this,list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(GetServiceActivity.this,LinearLayoutManager.VERTICAL,false));
+    private void initView() {
+        refreshLayout.setEnableFooterFollowWhenLoadFinished(true);
+        refreshLayout.setRefreshHeader(new ClassicsHeader(this));
+        adapter = new GetServiceAdapter(GetServiceActivity.this, list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(GetServiceActivity.this, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
+        refreshLayout.setEnableFooterFollowWhenLoadFinished(true);
+
+        //第一次进入演示刷新
+        refreshLayout.autoRefresh();
     }
 
 }
+
