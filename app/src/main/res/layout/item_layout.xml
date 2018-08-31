@@ -9,6 +9,7 @@
         android:background="@color/qmui_config_color_white"
         >
         <ImageView
+            android:id="@+id/item_img"
             android:layout_width="144px"
             android:layout_height="144px"
             android:layout_gravity="center_vertical"
@@ -32,6 +33,7 @@
                 android:layout_marginTop="5px"
                 >
                 <TextView
+                    android:id="@+id/item_name"
                     android:layout_width="0dp"
                     android:layout_weight="2"
                     android:layout_height="match_parent"
@@ -40,6 +42,7 @@
                     android:textColor="#666666"
                     />
                 <TextView
+                    android:id="@+id/item_date"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"

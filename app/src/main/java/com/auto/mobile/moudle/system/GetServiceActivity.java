@@ -1,12 +1,20 @@
 package com.auto.mobile.moudle.system;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.auto.mobile.R;
 import com.auto.mobile.common.base.BaseActivity;
+import com.auto.mobile.moudle.adapter.GetServiceAdapter;
+import com.auto.mobile.moudle.model.GetService;
 import com.qmuiteam.qmui.widget.QMUITopBar;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,6 +29,9 @@ public class GetServiceActivity extends BaseActivity {
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
 
+    List<GetService> list;
+    GetServiceAdapter adapter;
+
     @Override
     protected int getContextViewId() {
         return 0;
@@ -34,6 +45,8 @@ public class GetServiceActivity extends BaseActivity {
         setStatusBarLightMode(GetServiceActivity.this);
         ButterKnife.bind(this);
         initTopBar();
+        initData();
+        initView();
     }
 
     private void initTopBar(){
@@ -45,4 +58,25 @@ public class GetServiceActivity extends BaseActivity {
             }
         });
     }
+
+    //初始化数据
+    private void initData(){
+        list=new ArrayList<>();
+
+        for (int i=0;i<10;i++){
+            GetService getService=new GetService();
+            getService.setServiceName("服务"+i);
+            getService.setServiceDate(new SimpleDateFormat("yyyy.MM.dd").format(new Date()));
+            getService.setServiceDetails("服务：更换机油");
+            list.add(getService);
+        }
+
+    }
+
+    private void initView(){
+        adapter=new GetServiceAdapter(GetServiceActivity.this,list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(GetServiceActivity.this,LinearLayoutManager.VERTICAL,false));
+        recyclerView.setAdapter(adapter);
+    }
+
 }
