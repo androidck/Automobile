@@ -65,7 +65,8 @@ public class PersonFragment extends BaseFragment {
             case R.id.img_head:
                 break;
             case R.id.tv_release:
-
+                intent=new Intent(getActivity(), ReleaseActivity.class);
+                startActivity(intent);
                 break;
             case R.id.tv_service:
                 intent=new Intent(getActivity(), GetServiceActivity.class);

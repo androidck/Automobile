@@ -71,6 +71,8 @@
         <activity android:name=".moudle.system.GetServiceActivity"/>
 
         <activity android:name=".moudle.system.SettingActivity"/>
+
+        <activity android:name=".moudle.system.ReleaseDataActivity"/>
     </application>
 
 </manifest>

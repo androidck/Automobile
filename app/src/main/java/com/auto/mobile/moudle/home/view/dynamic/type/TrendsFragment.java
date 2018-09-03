@@ -13,6 +13,7 @@ import com.auto.mobile.common.base.BaseFragment;
 import com.auto.mobile.moudle.adapter.FactoryAdapter;
 import com.auto.mobile.moudle.model.Factory;
 import com.auto.mobile.moudle.system.ReleaseActivity;
+import com.auto.mobile.moudle.system.ReleaseDataActivity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView;
@@ -70,7 +71,7 @@ public class TrendsFragment extends BaseFragment {
         btnCommit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ReleaseActivity.class);
+                Intent intent = new Intent(getActivity(), ReleaseDataActivity.class);
                 startActivity(intent);
             }
         });

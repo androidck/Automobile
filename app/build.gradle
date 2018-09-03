@@ -10,7 +10,7 @@ android {
         automobile {
             keyAlias 'automobile'
             keyPassword '123456'
-            storeFile file('C:/Users/wudonglin/Desktop/automobile.jks')
+            storeFile file('F:/Automobile/automobile.jks')
             storePassword '123456'
         }
     }
@@ -66,14 +66,14 @@ dependencies {
     //轮播图
     implementation 'com.youth.banner:banner:1.4.10'
     implementation files('libs/map.jar')
-
     implementation 'com.yanzhenjie:permission:2.0.0-rc4'
     implementation 'com.yanzhenjie.alertdialog:alertdialog:1.0.1'
     //万能item
     implementation 'com.github.codbking:AllItemView:v1.0.0'
     //上拉刷新，下拉加载
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
-    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'//没有使用特殊Header，可以不加这行
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.5.1'
+    //没有使用特殊Header，可以不加这行
     //自定义刷新
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
 }

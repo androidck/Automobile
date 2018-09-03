@@ -201,10 +201,50 @@
                     android:drawableLeft="@mipmap/dingwei001"
                     android:drawablePadding="14px"
                     />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"/>
+                    <com.zhy.autolayout.AutoLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/yuyin001"
+                            android:layout_gravity="center_vertical"
+                            />
+                            <com.zhy.autolayout.AutoLinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@mipmap/home_beijingtu"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="12px"
+                                android:orientation="horizontal"
+                                >
+                                <com.zhy.autolayout.AutoLinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_weight="3"
+                                    android:layout_height="match_parent">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:text="20:23"
+                                        android:gravity="center_vertical"
+                                        android:textColor="#ffffff"
+                                        android:textSize="28px"
+                                        android:drawableRight="@mipmap/home_bo01"
+                                        android:drawablePadding="10px"
+                                        android:layout_marginLeft="13px"
+                                        />
+                                </com.zhy.autolayout.AutoLinearLayout>
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_weight="0.8"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical|right"
+                                    android:src="@mipmap/home_end"
+                                    />
+                            </com.zhy.autolayout.AutoLinearLayout>
+                    </com.zhy.autolayout.AutoLinearLayout>
             </com.zhy.autolayout.AutoLinearLayout>
             <View
                 android:layout_width="0.5dp"
@@ -217,7 +257,7 @@
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.2"
                 >
                 <ImageButton
                     android:id="@+id/ig_btn_phone"
