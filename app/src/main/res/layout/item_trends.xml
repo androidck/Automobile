@@ -98,10 +98,11 @@
                     android:orientation="horizontal"
                     >
                     <com.qmuiteam.qmui.widget.roundwidget.QMUIRoundButton
-                        android:id="@+id/btn_login"
+                        android:id="@+id/btn_read"
                         android:layout_width="114px"
                         android:layout_height="44px"
                         android:text="已读"
+                        android:clickable="false"
                         app:qmui_isRadiusAdjustBounds="true"
                         app:qmui_backgroundColor="@color/colorDataColor"
                         app:qmui_borderColor="@color/colorDataColor"
@@ -185,7 +186,7 @@
             <com.zhy.autolayout.AutoLinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6"
+                android:layout_weight="4"
                 android:orientation="vertical"
                 >
                 <TextView
@@ -205,6 +206,13 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"/>
             </com.zhy.autolayout.AutoLinearLayout>
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="match_parent"
+                android:background="#e5e5e5"
+                android:layout_marginTop="36.5px"
+                android:layout_marginBottom="36.5px"
+                />
             <!-- 又边 -->
             <com.zhy.autolayout.AutoRelativeLayout
                 android:layout_width="0dp"
@@ -223,4 +231,9 @@
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoLinearLayout>
     </com.zhy.autolayout.AutoLinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="30px"
+        android:background="#e5e5e5"
+        />
 </com.zhy.autolayout.AutoLinearLayout>
