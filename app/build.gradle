@@ -76,4 +76,5 @@ dependencies {
     //没有使用特殊Header，可以不加这行
     //自定义刷新
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
+
 }

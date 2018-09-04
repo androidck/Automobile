@@ -1,15 +1,14 @@
 package com.auto.mobile.moudle.home.view.dynamic;
 
-import android.content.res.Resources;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -24,6 +23,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 import static com.auto.mobile.common.util.DensityUtil.dip2px;
@@ -40,8 +40,14 @@ public class DynamicFragment extends BaseFragment {
     ViewPager viewPager;
     Unbinder unbinder;
 
-    private static final int ONE=1;
-    private static final int TWO=2;
+    private static final int ONE = 1;
+    private static final int TWO = 2;
+    @BindView(R.id.tv_city_select)
+    TextView tvCitySelect;
+    @BindView(R.id.im_data)
+    ImageView imData;
+
+
 
     @Override
     protected View onCreateView() {
@@ -57,9 +63,9 @@ public class DynamicFragment extends BaseFragment {
         tablayout.addTab(tablayout.newTab().setText("汽修厂"));
         reflex(tablayout);
         //创建子页面
-        MyPageAdapter adapter=new MyPageAdapter(getChildFragmentManager());
-        adapter.addFragment(TrendsFragment.newInstance(ONE),"动态");
-        adapter.addFragment(FactoryFragment.newInstance(TWO),"汽修厂");
+        MyPageAdapter adapter = new MyPageAdapter(getChildFragmentManager());
+        adapter.addFragment(TrendsFragment.newInstance(ONE), "动态");
+        adapter.addFragment(FactoryFragment.newInstance(TWO), "汽修厂");
         viewPager.setAdapter(adapter);
         tablayout.setupWithViewPager(viewPager);
     }
@@ -70,7 +76,7 @@ public class DynamicFragment extends BaseFragment {
         unbinder.unbind();
     }
 
-    public void reflex(final TabLayout tabLayout){
+    public void reflex(final TabLayout tabLayout) {
         //了解源码得知 线的宽度是根据 tabView的宽度来设置的
         tabLayout.post(new Runnable() {
             @Override
@@ -102,7 +108,7 @@ public class DynamicFragment extends BaseFragment {
 
                         //设置tab左右间距为10dp  注意这里不能使用Padding 因为源码中线的宽度是根据 tabView的宽度来设置的
                         LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) tabView.getLayoutParams();
-                        params.width = width ;
+                        params.width = width;
                         params.leftMargin = dp10;
                         params.rightMargin = dp10;
                         tabView.setLayoutParams(params);
@@ -120,14 +126,28 @@ public class DynamicFragment extends BaseFragment {
 
     }
 
+    @OnClick({R.id.tv_city_select, R.id.im_data})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_city_select:
+
+                break;
+            case R.id.im_data:
+                break;
+        }
+    }
+
+
+
+
 
     //tablayout 适配器
     private class MyPageAdapter extends FragmentPagerAdapter {
 
-        private final List<Fragment> mFragment=new ArrayList<Fragment>();
-        private final List<String> mFragmentTitle=new ArrayList<String>();
+        private final List<Fragment> mFragment = new ArrayList<Fragment>();
+        private final List<String> mFragmentTitle = new ArrayList<String>();
 
-        public void addFragment(Fragment  fragment,String title){
+        public void addFragment(Fragment fragment, String title) {
             mFragment.add(fragment);
             mFragmentTitle.add(title);
         }

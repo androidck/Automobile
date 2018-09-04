@@ -29,8 +29,7 @@ public class TextActivity extends BaseActivity {
 
     @BindView(R.id.btn_get)
     Button btnGet;
-    @BindView(R.id.tv_result)
-    TextView tvResult;
+
 
     private AMapLocationClient locationClient = null;
     private AMapLocationClientOption locationOption = null;
@@ -176,9 +175,9 @@ public class TextActivity extends BaseActivity {
 
                 //解析定位结果，
                 String result = sb.toString();
-                tvResult.setText(result);
+                //tvResult.setText(result);
             } else {
-                tvResult.setText("定位失败，loc is null");
+                //tvResult.setText("定位失败，loc is null");
             }
             //工资怎么提
         }

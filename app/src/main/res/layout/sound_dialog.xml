@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:voiceView="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+   <RelativeLayout
+       android:layout_width="450px"
+       android:layout_height="550px"
+       android:layout_centerVertical="true"
+       android:layout_centerHorizontal="true"
+       android:background="@drawable/voice_bg"
+       >
+      <com.zhy.autolayout.AutoLinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical"
+          android:background="@drawable/voice_bg"
+          >
+         <!-- 波浪图形 -->
+         <com.auto.mobile.common.view.VoiceLineView
+             android:id="@+id/voicLine"
+             android:layout_width="match_parent"
+             android:layout_height="120px"
+             android:layout_above="@+id/iv_voice"
+             voiceView:maxVolume="100"
+             voiceView:middleLine="@color/colorBgColor"
+             voiceView:middleLineHeight="1dp"
+             voiceView:fineness="three"
+             voiceView:rectSpace="2dp"
+             voiceView:rectWidth="5dp"
+             voiceView:sensibility="five"
+             voiceView:viewMode="line"
+             voiceView:lineSpeed="90"
+             android:layout_marginTop="10px"
+             voiceView:voiceLine="@color/white" />
+         <TextView
+             android:id="@+id/tv_time"
+             android:layout_width="match_parent"
+             android:layout_height="130px"
+             android:text="00:00"
+             android:gravity="center"
+             android:textSize="78px"
+             android:textColor="#161616"
+             android:layout_below="@id/voicLine"
+             />
+
+         <ImageButton
+             android:id="@+id/btn_lu"
+             android:layout_width="180px"
+             android:layout_height="93dp"
+             android:layout_gravity="center"
+             android:background="@null"
+             android:scaleType="centerInside"
+             android:src="@mipmap/luyin002" />
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="30dp"
+             android:layout_above="@+id/dialog_top"
+             android:layout_below="@id/btn_lu"
+             android:gravity="center"
+             android:text="长按录音"
+             android:layout_marginTop="30px"
+             android:textColor="#161616" />
+         <!-- 底部 -->
+
+      </com.zhy.autolayout.AutoLinearLayout>
+
+   </RelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>
