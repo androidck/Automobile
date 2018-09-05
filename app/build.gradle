@@ -77,4 +77,7 @@ dependencies {
     //自定义刷新
     implementation 'com.yanzhenjie:recyclerview-swipe:1.1.4'
 
+    //七牛云
+    implementation 'com.qiniu:qiniu-android-sdk:7.3.+'
+    implementation group: 'com.qiniu', name: 'happy-dns-java', version: '0.1.2'
 }

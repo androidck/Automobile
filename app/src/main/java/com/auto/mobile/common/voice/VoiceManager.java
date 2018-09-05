@@ -118,8 +118,8 @@ public class VoiceManager {
                             ts = VoiceTimeUtils.timeSpanSecond(mRecTimeSum);
                             //回调录音时间
                             if (voiceRecordCallBack != null) {
-                                voiceRecordCallBack.recDoing(mRecTimeSum, String.format("%02d:%02d:%02d",
-                                        ts.mSpanHour, ts.mSpanMinute, ts.mSpanSecond));
+                                voiceRecordCallBack.recDoing(mRecTimeSum, String.format("%02d:%02d",
+                                         ts.mSpanMinute, ts.mSpanSecond));
                             }
                             mHandler.sendEmptyMessageDelayed(MSG_TIME_INTERVAL, 1000);
                         }

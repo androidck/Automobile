@@ -23,10 +23,10 @@
          <com.auto.mobile.common.view.VoiceLineView
              android:id="@+id/voicLine"
              android:layout_width="match_parent"
-             android:layout_height="120px"
+             android:layout_height="145px"
              android:layout_above="@+id/iv_voice"
              voiceView:maxVolume="100"
-             voiceView:middleLine="@color/colorBgColor"
+             voiceView:middleLine="@color/white"
              voiceView:middleLineHeight="1dp"
              voiceView:fineness="three"
              voiceView:rectSpace="2dp"
@@ -34,8 +34,7 @@
              voiceView:sensibility="five"
              voiceView:viewMode="line"
              voiceView:lineSpeed="90"
-             android:layout_marginTop="10px"
-             voiceView:voiceLine="@color/white" />
+             voiceView:voiceLine="@color/colorBgColor" />
          <TextView
              android:id="@+id/tv_time"
              android:layout_width="match_parent"
