@@ -2,6 +2,163 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f6f6f6"
+    >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+            <!-- 顶部图片 -->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="470px"
+                android:layout_marginTop="20px"
+                android:background="@mipmap/qx_diantu"></com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/factoryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="104px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px"
+                    android:text="某某汽修厂"
+                    android:textColor="#222222"
+                    android:textSize="34px" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px"
+                    android:text="说明：某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂某某汽修厂"
+                    android:textColor="#ababab"
+                    android:textSize="30px" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px"
+                    android:layout_marginTop="36px"
+                    android:background="#d2d2d2" />
+                <!-- 地址 -->
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="170px"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:src="@mipmap/dingwei_qx" />
+
+                    <com.zhy.autolayout.AutoLinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="5"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_address"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="30px"
+                            android:layout_weight="3"
+                            android:text="历下区工业南路与奥体西路交叉口向北交叉口向北300米"
+                            android:textColor="#ababab"
+                            android:textSize="30px"></TextView>
+
+                        <TextView
+                            android:id="@+id/tv_distance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="20px"
+                            android:layout_weight="2"
+                            android:text="距您3.2km"
+                            android:textColor="#ababab"
+                            android:textSize="26px"></TextView>
+                    </com.zhy.autolayout.AutoLinearLayout>
+
+                    <View
+                        android:layout_width="0.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="40px"
+                        android:layout_marginLeft="10px"
+                        android:layout_marginTop="40px"
+                        android:background="#e5e5e5" />
+
+                    <ImageButton
+                        android:id="@+id/btn_call"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:background="@null"
+                        android:scaleType="center"
+                        android:src="@mipmap/dianhua01_qx" />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+            <!-- 营业时间 -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="76px"
+                android:layout_marginTop="20px"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:paddingLeft="20px"
+                android:paddingRight="20px"
+                android:text="营业时间：周一至周日 08:00-18:00"
+                android:textColor="#222222"
+                android:textSize="30px" />
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30px"
+                android:background="#ffffff"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="80px"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="20px"
+                    android:paddingRight="20px"
+                    android:text="服务内容"
+                    android:textColor="#222222"
+                    android:textSize="30px" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#e5e5e5" />
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></com.yanzhenjie.recyclerview.swipe.SwipeMenuRecyclerView>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </ScrollView>
+
 
 </FrameLayout>

@@ -124,7 +124,6 @@ public class SoundDialog extends Dialog{
                         //结束录音
                         if(voiceManager!=null){
                             voiceManager.stopVoiceRecord();
-                            stop();
                         }
                         break;
                 }
@@ -133,7 +132,7 @@ public class SoundDialog extends Dialog{
         });
     }
     //停止上传录音
-    private void stop(){
+    private void stop(final String path){
         new QMUIDialog.MessageDialogBuilder(mContext)
                 .setTitle("结束录音")
                 .setMessage("确定要上传录音吗？")
@@ -159,6 +158,7 @@ public class SoundDialog extends Dialog{
                     @Override
                     public void onClick(QMUIDialog dialog, int index) {
                         dialog.dismiss();
+                        uploadImg2QiNiu(path);
                         final QMUITipDialog tipDialog = new QMUITipDialog.Builder(mContext)
                                 .setIconType(QMUITipDialog.Builder.ICON_TYPE_SUCCESS)
                                 .setTipWord("上传成功")
@@ -201,8 +201,7 @@ public class SoundDialog extends Dialog{
 
             @Override
             public void recFinish(long length, String strLength, String path) {
-                Log.d("xxxrouind","音频路径"+path+""+strLength);
-                uploadImg2QiNiu(path);
+                stop(path);
                 if(enRecordVoiceListener != null){
                     enRecordVoiceListener.onFinishRecord(length, strLength, path);
                 }

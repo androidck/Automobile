@@ -14,12 +14,18 @@
         android:id="@+id/play"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="播放"
+        android:text="录音"
         />
     <Button
         android:id="@+id/stop"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="暂停"
+        />
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放录音"
         />
 </LinearLayout>

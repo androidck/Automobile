@@ -80,4 +80,6 @@ dependencies {
     //七牛云
     implementation 'com.qiniu:qiniu-android-sdk:7.3.+'
     implementation group: 'com.qiniu', name: 'happy-dns-java', version: '0.1.2'
+    //分组适配器
+    implementation 'com.github.donkingliang:GroupedRecyclerViewAdapter:1.3.0'
 }
